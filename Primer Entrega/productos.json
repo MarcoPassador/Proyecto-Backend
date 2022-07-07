@@ -1,0 +1,32 @@
+[
+    {
+        "name":"Remera",
+        "price":1500,
+        "photo":"https://http2.mlstatic.com/D_NQ_NP_730430-MLA30343873669_052019-O.jpg",
+        "id":1,
+        "timestamp":1654703548882,
+        "code":"",
+        "desc":"Remera basica blanca",
+        "stock":"5"
+    },
+    {
+        "name":"Pantalon",
+        "price":3500,
+        "photo":"https://http2.mlstatic.com/D_NQ_NP_752847-MLA41849266095_052020-W.jpg",
+        "id":2,
+        "timestamp":1654703548882,
+        "code":"",
+        "desc":"Pantalon de jean",
+        "stock":"2"
+    },
+    {
+        "name":"Gorro",
+        "price":500,
+        "photo":"https://miscellaneousbycaff.com.ar/wp-content/uploads/2019/03/gorros-beanie-lana-largos-unisex-premium-los-elegidos-2019-D_NQ_NP_631170-MLA29457861136_022019-F.jpg",
+        "id":3,
+        "timestamp":1654703548882,
+        "code":"",
+        "desc":"Gorro de lana",
+        "stock":7
+    }
+]
