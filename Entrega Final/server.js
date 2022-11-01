@@ -53,7 +53,7 @@ const serverUp = () => {
 
 if (myArgs.MODO === 'cluster') {
   if (cluster.isPrimary) {
-    logger.info(`El master con pid numero ${process.pid} esta funcionando`);
+    logger.info(`El master ${process.pid} esta funcionando`);
 
     for (let i = 0; i < numCpus; i++) {
         cluster.fork();
@@ -101,14 +101,11 @@ signup();
 serialize();
 deSerialize();
 
-
 ioSockets(io);
-
 
 router.get("/", home);
 router.get("/profile", profile);
 router.get('/mycart/:id', cart);
-
 
 router.get('/login', loginRoute())
 router.post('/login', loginPost())

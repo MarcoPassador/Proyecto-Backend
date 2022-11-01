@@ -9,7 +9,7 @@
     <%- include("../partials/head.ejs"); %>
     <%- include("../partials/css.ejs"); %>
 </head>
-<body>
+<body class="cartBody">
     <div class="CartsContainer">
         <% if (carts) { %>       
                     <div class="Cart">
@@ -25,17 +25,17 @@
                             <% } else { %>
                                 <p>Agregá productos a tu carrito</p> 
                             <% } %>
-                        </div>
-                        <div class="Products">
-                            <% for (let i = 0; i < carts.products.length; i++) { %>
-                                <div class="Product">
-                                    <p><%= carts.products[i].name %></p>
-                                    <img src="<%= carts.products[i].photo %>"/>
-                                    <p>Cantidad: <%= carts.products[i].quantity %></p>
-                                    <p>Total: <%= carts.products[i].quantity * carts.products[i].price %></p>
-                                    <p class="DeleteProd" onclick="deleteProd(`<%= user._id %>`, `<%= carts.products[i]._id%>` )">Eliminar producto del carrito</p>
-                                </div>
-                            <% } %>
+                            <div class="Products">
+                                <% for (let i = 0; i < carts.products.length; i++) { %>
+                                    <div class="Product">
+                                        <p><%= carts.products[i].name %></p>
+                                        <img src="<%= carts.products[i].photo %>"/>
+                                        <p>Cantidad: <%= carts.products[i].quantity %></p>
+                                        <p>Total: <%= carts.products[i].quantity * carts.products[i].price %></p>
+                                        <p class="DeleteProd" onclick="deleteProd(`<%= user._id %>`, `<%= carts.products[i]._id%>` )">Eliminar producto del carrito</p>
+                                    </div>
+                                <% } %>
+                            </div>
                         </div>
                     </div> 
         <% } else { %>
