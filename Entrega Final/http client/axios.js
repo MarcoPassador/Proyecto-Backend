@@ -23,10 +23,6 @@ const sameStatus = (resStatus, preStatus) => {
     return resStatus === preStatus
 }
 
-
-//ASEGURARSE ANTES DE INICIAR LAS REQUESTS DE INICIAR EL SERVER CON EL COMANDO --d test PARA UTILIZAR EL DAO PARA TESTING.
-
-//OBTENER TODOS LOS PRODUCTOS
 const getProducts = async () => {
     return await axios.get(`${host}/products`)
     .then(response => {
@@ -39,7 +35,6 @@ const getProducts = async () => {
     })
 }
 
-//AÑADE UN PRODUCTO A LA DB
 const addProduct = async() => {
     return await axios.post(`${host}/products`, testProduct)
     .then(response => {
@@ -52,7 +47,6 @@ const addProduct = async() => {
     })
 }
 
-//OBTENER UN PRODUCTO SEGÚN DETERMINADA ID
 const getProduct = async () => {
     return await axios.get(`${host}/products`)
     .then(response => {
@@ -73,7 +67,6 @@ const getProduct = async () => {
     })
 }
 
-//MODIFICAR PRODUCTO DADA DETERMINADA ID
 const updatedProduct = async () => {
     return await axios.get(`${host}/products`)
     .then(response => {
@@ -90,7 +83,6 @@ const updatedProduct = async () => {
     })
 }
 
-//ELIMINAR PRODUCTO DADA DETERMINADA ID
 const deleteProduct = async () => {
     return await axios.get(`${host}/products`)
     .then(response => {
@@ -113,8 +105,6 @@ addProduct();
 getProduct();
 updatedProduct();
 deleteProduct();
-
-//DE ESTA MANERA SE PUEDEN VISUALIZAR EN CONSOLA LAS OPERACIONES, SIEMPRE CREANDOSE UN PRODUCTO Y ELIMINÁNDOSE EL MISMO.
 
 
 

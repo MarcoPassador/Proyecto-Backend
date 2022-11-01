@@ -24,7 +24,7 @@ const validateData = (req, file, cb) => {
         cb(null, true);
       } else {
           cb(null, false);
-          return req.session.fileError = 'Solo se permiten formatos .png, .jpg y .jpeg';
+          return req.session.fileError = 'Formato invalido';
       }
   })
 }

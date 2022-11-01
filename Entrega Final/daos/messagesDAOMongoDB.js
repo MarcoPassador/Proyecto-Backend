@@ -5,6 +5,14 @@ class MessageDAOMongoDB extends contenedorMongo {
     constructor() {
         super(db, msgsModel);
     }
+    
+    async getOwnMsgs(alias) {
+        return this.db
+        .then(_ => this.model.find({'author.alias': alias}))
+        .then(msgs => {
+            return msgs;
+        })
+    }
 } 
 
 export default MessageDAOMongoDB;

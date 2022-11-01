@@ -9,11 +9,11 @@ const ADMIN_NUMBER = process.env.ADMINNUMBER
 const ADMIN_MAIL = process.env.ADMINMAIL
 
 const transporter = createTransport({
-  host: 'smtp.ethereal.email',
+  host: 'smtp.gmail.com',
   port: 587,
   auth: {
-      user: 'quincy.cronin@ethereal.email',
-      pass: '382MxRz3RDpT6jDczQ'
+      user: process.env.GMAILUSER,
+      pass: process.env.GMAILACC
   }
 });
 
@@ -60,6 +60,23 @@ class OrderService {
                 `
               }
 
+              const mailToUser = {
+                from: 'Ropas Kitos',
+                  to: orderData.client.email,
+                  subject: `Confirmacion de tu pedido, ${orderData.client.name} `,
+                  html: `
+                  <h1>Pedido confirmado</h1>
+                  <h2>Detalles de la orden</h2>
+                  <ul>
+                    <li>Direccion de entrega: ${orderData.client.address}</li>
+                    <h3>Orden de compra ${orderData.order.orderNo}</h3>
+                    <h4>Productos:</h4>
+                      ${prodsHtml}
+                    <h4>Total a pagar: ${orderData.order.total}</h4>
+                  </ul>
+                  `
+              }
+
             try {
               const message = await client.messages.create({
                   body: `Nuevo pedido de ${orderData.client.name} ${orderData.client.email}. Orden de compra ${orderData.order.orderNo}`,
@@ -72,6 +89,7 @@ class OrderService {
 
             try {
                 transporter.sendMail(mailOptions)
+                transporter.sendMail(mailToUser)
             } catch (err) {
                 loggerError.error(err)
             }

@@ -8,11 +8,11 @@ import "dotenv/config.js";
 import { createTransport } from 'nodemailer';
 
 const transporter = createTransport({
-  host: 'smtp.ethereal.email',
+  host: 'smtp.gmail.com',
   port: 587,
   auth: {
-      user: 'quincy.cronin@ethereal.email',
-      pass: '382MxRz3RDpT6jDczQ'
+      user: process.env.GMAILUSER,
+      pass: process.env.GMAILACC
   }
 });
 

@@ -10,7 +10,11 @@ class MessageRepository {
 
     async getMessages() {
         const messages = await this.dao.getElems();
-        // console.log(messages.map(msg => new MessageDTO(msg)));
+        return messages.map(msg => new MessageDTO(msg));
+    }
+
+    async getOwnMsgs(alias) {
+        const messages = await this.dao.getOwnMsgs(alias);
         return messages.map(msg => new MessageDTO(msg));
     }
 

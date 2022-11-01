@@ -29,7 +29,7 @@ class DAOFactory {
                 prodInstance = new ProductsDAOMongoDB();
             } else if (this.db === 'test') {
                 prodInstance = new ProductsTestDAOMongoDB();
-            } //else if (this.db === 'mariadb') { prodInstance = new ProductosDAOMariaDB || 'ProductosDAOMariaDB' } //sin implementar, a modo de ejemplo 
+            }
         }
         return prodInstance
     }
@@ -38,7 +38,7 @@ class DAOFactory {
         if (!cartInstance) {
             if (this.db === 'mongo') {
                 cartInstance = new cartsDAOMongoDB();
-            } //else if (this.db === 'mariadb') { cartInstance = new cartsDAOMariaDB || 'cartsDAOMariaDB' } //sin implementar, a modo de ejemplo  
+            }
         }
         return cartInstance;
     }
@@ -47,7 +47,7 @@ class DAOFactory {
         if (!msgInstance) {
             if (this.db === 'mongo') {
                 msgInstance = new MessageDAOMongoDB();
-            } //else if (this.db === 'mariadb') { msgInstance = new MessageDAOMariaDB || 'MessageDAOMariaDB' } //sin implementar, a modo de ejemplo  
+            }
         } 
         return msgInstance;
     }
@@ -56,7 +56,7 @@ class DAOFactory {
         if (!orderInstance) {
             if (this.db === 'mongo') {
                 orderInstance = new OrderDAOMongoDB();
-            } //else if (this.db === 'mariadb') { orderInstance = new OrderDAOMariaDB || 'OrderDAOMariaDB' } //sin implementar, a modo de ejemplo 
+            }
         }
         return orderInstance  
     }

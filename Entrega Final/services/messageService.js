@@ -8,6 +8,10 @@ class MessageService {
         return this.repository.getMessages();
     }
 
+    async getOwnMsgs(alias) {
+        return this.repository.getOwnMsgs(alias);
+    }
+
     async createMsgs(msg) {
         return this.repository.createMessage(msg)
     }

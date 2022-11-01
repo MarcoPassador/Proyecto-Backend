@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import "dotenv/config.js";
 
-//MONGODB CONFIG
 export const db = mongoose.connect(process.env.MONGODB, 
 { useNewUrlParser: true })
 

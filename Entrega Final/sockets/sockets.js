@@ -6,7 +6,7 @@ const myChat = new contenedorMongo(db, msgsModel);
 
 export const ioSockets = (io) => {
     io.on("connection", async socket => { 
-        console.log("Un nuevo cliente se ha conectado");
+        console.log("Nueva conexion");
      
         socket.emit("Mensajes", await myChat.getElems());
         socket.emit("Productos", await productService.getProducts());
